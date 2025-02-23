@@ -1,10 +1,11 @@
-FROM n8nio/n8n:latest
+# Use Node.js base image
+FROM node:18
 
 # Set working directory
 WORKDIR /data
 
-# Install dependencies (just in case)
-RUN apk add --no-cache bash
+# Install n8n globally
+RUN npm install -g n8n
 
 # Start n8n
 CMD ["n8n"]
